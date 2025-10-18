@@ -13,6 +13,7 @@ ALLOWED_ORIGINS = [
     "http://10.0.70.225:3000",  # For local development
     "https://news-portal-client-gamma.vercel.app",
      "http://localhost:3000",
+     "*"
 ]
 
 app.add_middleware(
