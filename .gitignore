@@ -1,3 +1,5 @@
 .env
 scrap/
 __pycache__/
+
+venv/

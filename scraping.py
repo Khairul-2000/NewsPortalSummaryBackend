@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI()
+app = FastAPI(swagger_ui_parameters={"defaultModelsExpandDepth": -1})
 
 
 ALLOWED_ORIGINS = [
@@ -99,11 +99,14 @@ def read_root():
 
 @app.post("/scraping")
 async def APIHandle(body: UrlRequest):
+    print(f"Received URL: {body.url}")
    
     try:
         result = await main(body.url)
-       
         
+        print("Scraping and summarization completed successfully.")
+        print(result)
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
@@ -113,6 +116,3 @@ async def APIHandle(body: UrlRequest):
 
 
 
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
