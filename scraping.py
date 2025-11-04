@@ -45,7 +45,7 @@ async def main(your_url: str):
         )
 
     response = await client.chat.completions.create(
-        model="gpt-4.1",
+        model="gpt-4.1 mini",
         messages=[
             {
                 "role": "system",
