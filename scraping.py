@@ -45,7 +45,7 @@ async def main(your_url: str):
         )
 
     response = await client.chat.completions.create(
-        model="gpt-4.1 mini",
+        model="gpt-4o-mini",
         messages=[
             {
                 "role": "system",
@@ -75,10 +75,7 @@ async def main(your_url: str):
                                     
                                     """
             },
-            # {
-            #     "role": "user",
-            #     "content": "Are semicolons optional in JavaScript?"
-            # }
+      
         ]
     )
     print(response.choices[0].message.content)
