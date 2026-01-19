@@ -94,3 +94,10 @@ uvicorn
 xxhash
 yarl
 zipp
+redis
+aioredis
+
+
+
+
+

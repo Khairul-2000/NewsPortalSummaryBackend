@@ -13,6 +13,6 @@ RUN python -m playwright install --with-deps chromium
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 7777
 
-CMD ["uvicorn", "scraping:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "scraping:app", "--host", "0.0.0.0", "--port", "7777"]
